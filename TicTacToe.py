@@ -56,8 +56,11 @@ class TicTacToe:
         return state * player
 
     def get_encoded_state(self, state):
-        encoded = np.stack(
+        encoded_state = np.stack(
             (state == 1, state == 0, state == -1)
         ).astype(np.float32)
 
-        return encoded
+        if len(state.shape) == 3:
+            encoded_state = np.swapaxes(encoded_state, 0, 1)
+
+        return encoded_state
