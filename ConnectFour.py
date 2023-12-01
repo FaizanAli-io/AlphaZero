@@ -2,7 +2,7 @@ import numpy as np
 
 
 class ConnectFour:
-    def __init__(self):
+    def __init__(self) -> None:
         self.rows = 6
         self.cols = 7
         self.action_size = self.cols
